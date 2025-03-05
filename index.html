@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Manual</title>
+    <style>
+      body {
+        text-align: center;
+        margin: 20px;
+        font-family: Arial;
+      }
+      select {
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select Language</h1>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <!-- 其他语言选项 -->
+    </select>
+    <div>
+      <img id="manual" src="" />
+    </div>
+    <script>
+      const links = {
+        en: "/images/image1.jpg",
+        es: "/images/image2.jpg",
+      };
+      document
+        .getElementById("language")
+        .addEventListener("change", function () {
+          document.getElementById("manual").src = links[this.value];
+        });
+      // 默认加载英文
+      document.getElementById("manual").src = links.en;
+    </script>
+  </body>
+</html>
